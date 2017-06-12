@@ -1,12 +1,15 @@
 # vue_oss
 
-> oos upload 
+> oos upload
 
 ## Build Setup
 
 ``` bash
 # install dependencies
-npm install
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+cnpm i -g npm-check-updates
+npm-check-updates -u
+cnpm install
 
 # serve with hot reload at localhost:8080
 npm run dev
@@ -26,4 +29,13 @@ npm run e2e
 # run all tests
 npm test
 ```
+
+
+# demo :
+ https://chrome.google.com/webstore/detail/modheader/idgpnmonknjnojddfkpgkljpfnnfcklj
+ ###import file:
+ ```
+ {"title":"Profile 4","hideComment":true,"headers":[{"enabled":true,"name":"","value":"","comment":""}],"respHeaders":[{"enabled":true,"name":"Access-Control-Allow-Origin","value":"*","comment":""}],"filters":[],"appendMode":""}
+ ```
+
 

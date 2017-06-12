@@ -68,7 +68,9 @@
         }
 
         if (xmlhttp != null) {
-          const serverUrl = '';
+          // 你的服务端接口地址:参考:http://oss-demo.aliyuncs.com/oss-h5-upload-js-php/
+          // 服务端签名后直传:https://help.aliyun.com/document_detail/31926.html
+          const serverUrl = 'http://oss-demo.aliyuncs.com/oss-h5-upload-js-php/php/get.php';
           xmlhttp.open('GET', serverUrl, false);
           xmlhttp.send(null);
           return xmlhttp.responseText;
