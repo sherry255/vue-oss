@@ -35,7 +35,7 @@ cnpm install
 
 # 修改你的接口:
 参考服务端签名后直传文档:https://help.aliyun.com/document_detail/31926.html
-将此处的 serverUrl 换成你的接口地址: https://github.com/sherrycherish/vue-oss/blob/master/src/components/Upload.vue#L73
+将[此处](https://github.com/sherrycherish/vue-oss/blob/master/src/components/Upload.vue#L73)的 serverUrl 换成你的接口地址: 
 
 
 
