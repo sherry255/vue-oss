@@ -31,7 +31,7 @@ npm test
 ```
 
 
-# demo :
+# demo :  http://sherrycherish.cc/vue-oss/
  https://chrome.google.com/webstore/detail/modheader/idgpnmonknjnojddfkpgkljpfnnfcklj
  ###import file:
  ```
