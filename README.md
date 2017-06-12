@@ -33,7 +33,7 @@ npm test
 
 ## demo : 
 地址: http://sherrycherish.cc/vue-oss/
-因为cors的问题, 必须按照以下操作, demo才能完整展示:
+### 因为cors的问题, 必须按照以下操作, demo才能完整展示:
  1. https://chrome.google.com/webstore/detail/modheader/idgpnmonknjnojddfkpgkljpfnnfcklj
  2. import file:
  ```
