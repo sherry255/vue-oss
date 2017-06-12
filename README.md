@@ -6,9 +6,9 @@
 
 ## demo : 
 地址: http://sherrycherish.cc/vue-oss/
-### 因为cors的问题, 必须按照以下操作, demo才能完整展示:
+### 因为跨域的问题, 必须按照以下操作, demo才能完整展示:
  1. 安装插件: https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi/reviews?hl=zh-CN
- 2. ![启用cors](http://i2.muimg.com/1949/e1cb3540d166cfb6.png)
+ 2. 启用cors![启用cors](http://i2.muimg.com/1949/e1cb3540d166cfb6.png)
  
  #### 注: 使用完毕记得关闭cors
  
