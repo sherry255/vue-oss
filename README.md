@@ -31,11 +31,14 @@ npm test
 ```
 
 
-# demo :  http://sherrycherish.cc/vue-oss/
- https://chrome.google.com/webstore/detail/modheader/idgpnmonknjnojddfkpgkljpfnnfcklj
- ###import file:
+## demo : 
+地址: http://sherrycherish.cc/vue-oss/
+因为cors的问题, 必须按照以下操作, demo才能完整展示:
+ 1. https://chrome.google.com/webstore/detail/modheader/idgpnmonknjnojddfkpgkljpfnnfcklj
+ 2. import file:
  ```
  {"title":"Profile 4","hideComment":true,"headers":[{"enabled":true,"name":"","value":"","comment":""}],"respHeaders":[{"enabled":true,"name":"Access-Control-Allow-Origin","value":"*","comment":""}],"filters":[],"appendMode":""}
  ```
+ 
 
 
