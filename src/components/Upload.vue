@@ -62,20 +62,13 @@
     },
     methods: {
       send_request() {
-        let xmlhttp = null;
-        if (window.XMLHttpRequest) {
-          xmlhttp = new XMLHttpRequest();
-        }
-
-        if (xmlhttp != null) {
-          // 你的服务端接口地址:参考:http://oss-demo.aliyuncs.com/oss-h5-upload-js-php/
-          // 服务端签名后直传:https://help.aliyun.com/document_detail/31926.html
-          const serverUrl = 'http://oss-demo.aliyuncs.com/oss-h5-upload-js-php/php/get.php';
-          xmlhttp.open('GET', serverUrl, false);
-          xmlhttp.send(null);
-          return xmlhttp.responseText;
-        }
-        return '';
+        const xmlhttp = new XMLHttpRequest();
+        // 你的服务端接口地址:  参考demo:http://oss-demo.aliyuncs.com/oss-h5-upload-js-php/
+        // 服务端签名后直传文档:  https://help.aliyun.com/document_detail/31926.html
+        const serverUrl = 'http://oss-demo.aliyuncs.com/oss-h5-upload-js-php/php/get.php';
+        xmlhttp.open('GET', serverUrl, false);
+        xmlhttp.send(null);
+        return xmlhttp.responseText;
       },
       get_signature() {
         // 可以判断当前expire是否超过了当前时间,如果超过了当前时间,就重新取一下.3s 做为缓冲
@@ -243,68 +236,4 @@
     },
   };
 </script>
-
-<style>
-  .btn {
-    color: #fff;
-    background-color: #54b9f9;
-    border-color: #54b9f9;
-    display: inline-block;
-    padding: 6px 12px;
-    margin-bottom: 0;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    text-decoration: none;
-    vertical-align: middle;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-image: none;
-    /*border: 1px solid transparent;*/
-    border-radius: 4px;
-  }
-
-  a.btn:hover {
-    background-color: #29e0f9;
-  }
-
-  .progress {
-    margin-top: 2px;
-    width: 200px;
-    height: 14px;
-    display: inline-block;
-    margin-bottom: 10px;
-    overflow: hidden;
-    background-color: #f5f5f5;
-    border-radius: 4px;
-    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
-  }
-
-  .progress-bar {
-    background-color: rgb(84, 185, 249);
-    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.14902) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.14902) 50%, rgba(255, 255, 255, 0.14902) 75%, transparent 75%, transparent);
-    background-size: 40px 40px;
-    box-shadow: rgba(0, 0, 0, 0.14902) 0 -1px 0px 0px inset;
-    box-sizing: border-box;
-    color: rgb(255, 255, 255);
-    display: block;
-    float: none;
-    font-size: 12px;
-    height: 20px;
-    line-height: 20px;
-    text-align: center;
-    transition-delay: 0s;
-    transition-duration: 0.6s;
-    transition-property: width;
-    transition-timing-function: ease;
-    width: 266px;
-  }
-</style>
+<style src="./upload.css"></style>
