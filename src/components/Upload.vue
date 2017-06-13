@@ -2,8 +2,8 @@
 <template lang="html">
   <div>
     <form style="display: none" name=theform>
-      <input type="radio" name="myradio" value="local_name" checked=true/> 上传文件名字保持本地文件名字
-      <input type="radio" name="myradio" value="random_name"/> 上传文件名字是随机文件名, 后缀保留
+      <a type="radio" name="myradio" ></a> 上传文件名字保持本地文件名字
+      <a type="radio" name="myradio" ></a> 上传文件名字是随机文件名, 后缀保留
     </form>
 
     <h4>您所选择的文件列表：</h4>
@@ -189,7 +189,7 @@
             FilesAdded: (up, files) => {
               plupload.each(files, (file) => {
                 console.log('file_name: ', file.name, ',    ', 'file_size:  ', file.size);
-                document.getElementById('ossfile').innerHTML += `<div id="${file.id}">${file.name} (${plupload.formatSize(file.size)})<b></b><div class="progress"><div class="progress-bar" style="width: 0%"></div></div></div>`;
+                document.getElementById('ossfile').innerHTML += `<div id="${file.id}">${file.name} (${plupload.formatSize(file.size)})<b></b><div class="progress"><div class="progress-bar" style="width: 0"></div></div></div>`;
                 that.message = '';
               });
             },
