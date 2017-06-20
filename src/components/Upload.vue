@@ -61,7 +61,7 @@
       });
     },
     methods: {
-      send_request() {
+      sendRequest() {
         const xmlhttp = new XMLHttpRequest();
         // 你的服务端接口地址:  参考demo:http://oss-demo.aliyuncs.com/oss-h5-upload-js-php/
         // 服务端签名后直传文档:  https://help.aliyun.com/document_detail/31926.html
@@ -70,11 +70,11 @@
         xmlhttp.send(null);
         return xmlhttp.responseText;
       },
-      get_signature() {
+      getSignature() {
         // 可以判断当前expire是否超过了当前时间,如果超过了当前时间,就重新取一下.3s 做为缓冲
         this.now = Date.parse(new Date()) / 1000;
         if (this.expire < this.now + 3) {
-          const body = this.send_request();
+          const body = this.sendRequest();
           const e = eval;
           const obj = e(`(${body})`);
           this.host = obj.host;
@@ -88,7 +88,7 @@
         }
         return false;
       },
-      check_object_radio() {
+      checkObjectRadio() {
         const tt = document.getElementsByName('myradio');
         for (let i = 0; i < tt.length; i += 1) {
           if (tt[i].checked) {
@@ -97,7 +97,7 @@
           }
         }
       },
-      random_string(len = 32) {
+      randomString(len = 32) {
         const chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678';
         const maxPos = chars.length;
         let pwd = '';
@@ -106,7 +106,7 @@
         }
         return pwd;
       },
-      get_suffix(filename) {
+      getSuffix(filename) {
         const pos = filename.lastIndexOf('.');
         let suffix = '';
         if (pos !== -1) {
@@ -114,16 +114,16 @@
         }
         return suffix;
       },
-      calculate_object_name(filename) {
+      calculateObjectName(filename) {
         if (this.g_object_name_type === 'local_name') {
           this.g_object_name += `${filename}`;
         } else if (this.g_object_name_type === 'random_name') {
-          const suffix = this.get_suffix(filename);
-          this.g_object_name = this.key + this.random_string(10) + suffix;
+          const suffix = this.getSuffix(filename);
+          this.g_object_name = this.key + this.randomString(10) + suffix;
         }
         return '';
       },
-      get_uploaded_object_name(filename) {
+      getUploadedObjectName(filename) {
         if (this.g_object_name_type === 'local_name') {
           let tmpName = this.g_object_name;
           tmpName = tmpName.replace(`${filename}`, filename);
@@ -133,13 +133,13 @@
         }
         return '';
       },
-      set_upload_param(up, filename, ret) {
+      setUploadParam(up, filename, ret) {
         if (ret === false) {
-          this.get_signature();
+          this.getSignature();
         }
         this.g_object_name = this.key;
         if (filename !== '') {
-          this.calculate_object_name(filename);
+          this.calculateObjectName(filename);
         }
         const newMultipartParams = {
           key: this.g_object_name,
@@ -158,7 +158,6 @@
       },
       upload() {
         const that = this;
-
         const uploader = new plupload.Uploader({
           runtimes: 'html5,flash,silverlight,html4',
           browse_button: 'selectfiles',
@@ -181,7 +180,7 @@
             PostInit: () => {
               this.ossFile = '';
               document.getElementById('postfiles').onclick = () => {
-                that.set_upload_param(uploader, '', false);
+                that.setUploadParam(uploader, '', false);
                 // console.log('...');
                 return false;
               };
@@ -195,8 +194,8 @@
             },
 
             BeforeUpload: (up, file) => {
-              that.check_object_radio();
-              that.set_upload_param(up, file.name, true);
+              that.checkObjectRadio();
+              that.setUploadParam(up, file.name, true);
             },
             UploadProgress: (up, file) => {
               const d = document.getElementById(file.id);
@@ -209,7 +208,7 @@
             FileUploaded: (up, file, info) => {
               if (info.status === 200) {
                 document.getElementById(file.id).getElementsByTagName('b')[0].innerHTML
-                  = `upload to oss success, object name:${this.get_uploaded_object_name(file.name)}`;
+                  = `upload to oss success, object name:${this.getUploadedObjectName(file.name)}`;
               } else {
                 document.getElementById(file.id).getElementsByTagName('b')[0].innerHTML = info.response;
               }
